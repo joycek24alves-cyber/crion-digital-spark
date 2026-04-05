@@ -10,12 +10,12 @@ const HeroSection = () => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8"
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-1.5 mb-8"
       >
-        <span className="h-2 w-2 rounded-full bg-primary animate-pulse_dot" />
-        <span className="font-body text-sm font-light text-primary">
-          Landing Pages que convertem de verdade
+        <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse_dot" />
+        <span className="font-body text-sm font-medium text-red-400">
+          Vagas limitadas este mês
         </span>
       </motion.div>
 
@@ -25,18 +25,18 @@ const HeroSection = () => (
         transition={{ duration: 0.6, delay: 0.4 }}
         className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] mb-6"
       >
-        <span className="block text-foreground">Sua página na internet</span>
-        <span className="block text-gradient">trabalhando por você</span>
+        <span className="block text-foreground">Você gasta com tráfego.</span>
+        <span className="block text-gradient">Sua página não converte.</span>
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        className="font-body font-light text-muted-foreground text-base sm:text-lg max-w-xl mx-auto mb-10"
+        className="font-body text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-10"
       >
-        Criamos landing pages profissionais, rápidas e indexadas no Google para
-        negócios que querem atrair clientes todos os dias.
+        Criamos landing pages que <strong className="text-foreground">transformam cliques em clientes</strong>.
+        {" "}Rápidas. Otimizadas. Prontas em 7 dias.
       </motion.p>
 
       <motion.div
@@ -49,23 +49,26 @@ const HeroSection = () => (
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-primary font-body font-medium px-8 py-3.5 rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25"
+          className="bg-gradient-primary font-body font-semibold text-lg px-10 py-4 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
           style={{ color: "#fff" }}
         >
-          Quero minha LP agora
-        </a>
-        <a
-          href="#cases"
-          className="font-body font-medium px-8 py-3.5 rounded-lg border border-foreground/10 text-foreground/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40"
-        >
-          Ver cases
+          Quero parar de perder dinheiro →
         </a>
       </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="font-body text-xs text-muted-foreground mt-6"
+      >
+        Sem contrato. Sem mensalidade. Resultado em 7 dias.
+      </motion.p>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="w-5 h-8 rounded-full border-2 border-foreground/20 flex justify-center pt-1.5">

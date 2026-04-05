@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const stats = [
-  { value: 30, suffix: "+", label: "Projetos entregues" },
-  { value: 7, suffix: "", label: "Dias para entregar" },
-  { value: 100, suffix: "%", label: "No prazo" },
-  { value: 30, suffix: "", label: "Dias de suporte" },
+  { value: 30, suffix: "+", label: "LPs entregues" },
+  { value: 7, suffix: " dias", label: "Do zero ao ar" },
+  { value: 100, suffix: "%", label: "Entregues no prazo" },
+  { value: 3, suffix: "x", label: "Mais conversão" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
