@@ -23,9 +23,9 @@ const SolutionSection = () => (
           Nós <span className="text-gradient-intense" style={{ filter: "drop-shadow(0 0 30px hsl(270 80% 65% / 0.3))" }}>resolvemos</span> isso.
         </h2>
         <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Criamos landing pages com foco total em conversão, usando{" "}
-          <strong className="text-foreground">estratégia, design e copy</strong>{" "}
-          para transformar visitantes em clientes.
+          Construímos landing pages do zero, com{" "}
+          <strong className="text-foreground">estrutura estratégica, design e copy</strong>{" "}
+          pensados para transformar visitantes em clientes.
         </p>
       </AnimatedSection>
 

@@ -5,8 +5,8 @@ import { Rocket, BarChart3, Clock, TrendingUp } from "lucide-react";
 const WA_LINK = "https://wa.me/5511999999999";
 
 const benefits = [
-  { icon: Rocket, title: "Mais vendas com o mesmo tráfego", desc: "Sem gastar mais. Só convertendo melhor." },
-  { icon: BarChart3, title: "Melhor aproveitamento dos anúncios", desc: "Cada real investido gerando mais retorno." },
+  { icon: Rocket, title: "Uma página construída pra vender", desc: "Do zero. Com estratégia. Sem template." },
+  { icon: BarChart3, title: "Seus anúncios finalmente dão retorno", desc: "Tráfego pago + LP estratégica = vendas reais." },
   { icon: Clock, title: "Página que trabalha 24h por você", desc: "Vendendo enquanto você dorme." },
   { icon: TrendingUp, title: "Escala previsível", desc: "Mais tráfego = mais resultado. Simples." },
 ];

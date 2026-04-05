@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 const WA_LINK = "https://wa.me/5511999999999";
 
 const cases = [
-  { tag: "Estética · SP", title: "Estética by Viviane Oliveira", desc: "Conversão 3x maior após trocar site genérico pela LP da Crion.", link: "https://esteticabyvivianeoliveira.com.br" },
+  { tag: "Estética · SP", title: "Estética by Viviane Oliveira", desc: "LP criada do zero com foco em conversão. Resultado 3x maior.", link: "https://esteticabyvivianeoliveira.com.br" },
   { tag: "Bronzeamento · SP", title: "Spazio Bronze e Estética", desc: "LP premium que posiciona a marca e converte direto pelo WhatsApp.", link: "http://simonebybronze.com.br" },
   { tag: "Engenharia · SP", title: "Vieira Engenharia", desc: "Credibilidade instantânea. Página indexada no Google em 48h.", link: "https://vieiraengenhariacivil.com.br" },
 ];
