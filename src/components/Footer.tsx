@@ -6,7 +6,7 @@ const Footer = () => (
       <img
         src={crionLogo}
         alt="Crion Digital"
-        className="h-10 mb-4 drop-shadow-[0_0_15px_rgba(123,46,255,0.25)]"
+        className="h-20 mb-4 drop-shadow-[0_0_15px_rgba(123,46,255,0.25)]"
       />
       <p className="font-body text-sm text-muted-foreground/50 mb-2">
         Landing Pages de alta conversão · criondigital.com.br

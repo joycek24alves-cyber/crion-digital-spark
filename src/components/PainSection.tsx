@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import FloatingParticles from "./FloatingParticles";
 import { TrendingDown, MousePointerClick, Palette, DollarSign } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const pains = [
   { icon: TrendingDown, text: <>Você investe em anúncios, mas <strong className="text-red-400">não vende</strong></> },

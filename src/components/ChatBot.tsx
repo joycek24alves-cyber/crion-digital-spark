@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const options = [
   { label: "Qual o prazo?", answer: "Entregamos sua LP em até 7 dias úteis após a aprovação do briefing." },

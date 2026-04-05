@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import crionLogo from "@/assets/crion-logo.png";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,7 @@ const Navbar = () => {
         <img
           src={crionLogo}
           alt="Crion Digital"
-          className="h-12 drop-shadow-[0_0_15px_rgba(123,46,255,0.3)]"
+          className="h-16 drop-shadow-[0_0_15px_rgba(123,46,255,0.3)]"
         />
         <a
           href={WA_LINK}

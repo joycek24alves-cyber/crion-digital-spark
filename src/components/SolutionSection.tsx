@@ -4,7 +4,7 @@ import BackgroundLines from "./BackgroundLines";
 import FloatingParticles from "./FloatingParticles";
 import { ShieldCheck, PenTool, Target, TrendingUp } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const diffs = [
   { icon: ShieldCheck, title: "Estrutura validada", desc: "Arquitetura testada em dezenas de projetos reais." },

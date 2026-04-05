@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import { CheckCircle2 } from "lucide-react";
 import FloatingParticles from "./FloatingParticles";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const profiles = [
   "Negócios que investem em tráfego pago mas não têm uma LP profissional",

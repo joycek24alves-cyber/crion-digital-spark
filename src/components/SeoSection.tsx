@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import { Search, Zap, TrendingUp } from "lucide-react";
 import FloatingParticles from "./FloatingParticles";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const cards = [
   { icon: Search, title: "SEO agressivo", desc: "Sua LP no Google sem pagar por cada clique." },

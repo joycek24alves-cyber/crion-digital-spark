@@ -5,7 +5,7 @@ import ProcessFlowLines from "./ProcessFlowLines";
 import { MessageCircle, Paintbrush, Globe, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const steps = [
   { num: "01", icon: MessageCircle, title: "Briefing rápido", desc: "10 min no WhatsApp. Sem reunião." },
