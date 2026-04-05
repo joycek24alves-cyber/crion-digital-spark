@@ -49,7 +49,7 @@ function FlowLines() {
         return (
           <line
             key={i}
-            ref={(el: THREE.Line) => { if (el) lineRefs.current[i] = el; }}
+            ref={(el: any) => { if (el) lineRefs.current[i] = el; }}
           >
             <bufferGeometry>
               <bufferAttribute attach="attributes-position" args={[positions, 3]} count={POINTS_PER_LINE} itemSize={3} />

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import HeroBackground from "./HeroBackground";
+import HeroParticleSphere from "./HeroParticleSphere";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const WA_LINK = "https://wa.me/5511999999999";
@@ -11,19 +12,11 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "linear-gradient(180deg, hsl(260 35% 4%) 0%, hsl(263 40% 6%) 50%, hsl(260 35% 4%) 100%)" }}>
 
-      {/* Spline 3D iframe */}
-      <iframe
-        src="https://my.spline.design/ticktockinteractivelanding-RKtZh8rSUxX7LssFrLuVDjJu/"
-        width="100%"
-        height="100%"
-        loading="lazy"
-        className="absolute inset-0 z-0 border-0 pointer-events-none opacity-60 md:opacity-60 max-md:opacity-40"
-        title="Spline 3D Hero"
-      />
+      {/* Three.js particle sphere */}
+      <HeroParticleSphere isMobile={isMobile} />
 
-      {/* Dark overlay on top of iframe */}
-      <div className="absolute inset-0 z-[1]"
-        style={{ background: "linear-gradient(180deg, hsl(260 35% 4% / 0.75) 0%, hsl(263 40% 6% / 0.75) 50%, hsl(260 35% 4% / 0.75) 100%)" }} />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-[1]" style={{ background: "rgba(8,12,18,0.80)" }} />
 
       <HeroBackground />
 

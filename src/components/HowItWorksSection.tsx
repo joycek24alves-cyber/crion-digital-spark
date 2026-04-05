@@ -1,9 +1,9 @@
 import AnimatedSection from "./AnimatedSection";
 import SectionLabel from "./SectionLabel";
 import BackgroundLines from "./BackgroundLines";
+import ProcessFlowLines from "./ProcessFlowLines";
 import { MessageCircle, Paintbrush, Globe, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const WA_LINK = "https://wa.me/5511999999999";
 
@@ -15,24 +15,13 @@ const steps = [
 ];
 
 const HowItWorksSection = () => {
-  const isMobile = useIsMobile();
-
   return (
     <section className="bg-alt py-32 relative overflow-hidden noise-overlay clip-diagonal-top">
-      {/* Spline 3D iframe — hidden on mobile */}
-      {!isMobile && (
-        <iframe
-          src="https://my.spline.design/claritystream-f3CkZvbBgZlElpgxTWlIrfPj/"
-          width="100%"
-          height="100%"
-          loading="lazy"
-          className="absolute inset-0 z-0 border-0 pointer-events-none opacity-50"
-          title="Spline 3D Process"
-        />
-      )}
+      {/* Three.js flow lines */}
+      <ProcessFlowLines />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 z-[1] bg-alt/80" />
+      <div className="absolute inset-0 z-[1]" style={{ background: "rgba(8,12,18,0.80)" }} />
 
       <div className="skew-stripe" />
       <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full blur-[140px] pointer-events-none z-[2]" style={{ background: "radial-gradient(circle, hsl(260 80% 50% / 0.05), transparent)" }} />
