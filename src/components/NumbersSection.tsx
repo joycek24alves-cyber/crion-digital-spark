@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import BackgroundLines from "./BackgroundLines";
+import { motion } from "framer-motion";
 
 const stats = [
   { value: 30, suffix: "+", label: "LPS ENTREGUES" },
@@ -45,8 +46,8 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 const NumbersSection = () => (
-  <section className="bg-alt py-24 relative overflow-hidden noise-overlay">
-    <div className="section-divider absolute top-0 left-0 right-0" />
+  <section className="bg-alt py-24 relative overflow-hidden noise-overlay clip-diagonal-both">
+    <div className="skew-stripe" />
     <div className="absolute inset-0 opacity-[0.02]" style={{
       backgroundImage: "linear-gradient(hsl(270 80% 65% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(270 80% 65% / 0.5) 1px, transparent 1px)",
       backgroundSize: "60px 60px",
@@ -54,20 +55,25 @@ const NumbersSection = () => (
     <BackgroundLines count={3} color="purple" />
 
     <div className="relative z-10 container mx-auto px-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-        {stats.map((s, i) => (
-          <AnimatedSection
-            key={i}
-            delay={i * 0.15}
-            variant="scaleUp"
-            className={`flex flex-col items-center py-12 ${
-              i < stats.length - 1 ? "md:border-r border-primary/5" : ""
-            } ${i < 2 ? "border-b md:border-b-0 border-primary/5" : ""}`}
-          >
-            <Counter target={s.value} suffix={s.suffix} />
-            <span className="font-body text-[11px] text-muted-foreground mt-3 tracking-[0.2em] uppercase">{s.label}</span>
-          </AnimatedSection>
-        ))}
+      {/* Asymmetric: first stat large, rest in row */}
+      <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-0">
+        <AnimatedSection variant="scaleUp" className="lg:w-2/5 text-center lg:text-left lg:border-r border-primary/5 lg:pr-12 py-8">
+          <Counter target={stats[0].value} suffix={stats[0].suffix} />
+          <span className="block font-body text-[11px] text-muted-foreground mt-3 tracking-[0.2em] uppercase">{stats[0].label}</span>
+        </AnimatedSection>
+        <div className="lg:w-3/5 grid grid-cols-3 gap-0">
+          {stats.slice(1).map((s, i) => (
+            <AnimatedSection
+              key={i}
+              delay={0.15 + i * 0.15}
+              variant="fadeUp"
+              className={`flex flex-col items-center py-8 ${i < 2 ? "border-r border-primary/5" : ""}`}
+            >
+              <Counter target={s.value} suffix={s.suffix} />
+              <span className="font-body text-[11px] text-muted-foreground mt-3 tracking-[0.2em] uppercase">{s.label}</span>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </div>
   </section>

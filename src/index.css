@@ -176,6 +176,33 @@
     background: linear-gradient(90deg, transparent, hsl(263 100% 59% / 0.15), hsl(187 100% 50% / 0.05), transparent);
   }
 
+  /* Diagonal clip transitions */
+  .clip-diagonal-top {
+    clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(5vw + 2rem);
+  }
+  .clip-diagonal-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+    padding-bottom: calc(5vw + 2rem);
+  }
+  .clip-diagonal-both {
+    clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%);
+    margin-top: -5vw;
+    padding-top: calc(5vw + 2rem);
+    padding-bottom: calc(5vw + 2rem);
+  }
+
+  /* Skewed section accent stripe */
+  .skew-stripe {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(263 100% 59% / 0.03) 0%, transparent 50%, hsl(187 100% 50% / 0.02) 100%);
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+
   /* Noise overlay */
   .noise-overlay {
     position: relative;
