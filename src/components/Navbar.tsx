@@ -23,7 +23,7 @@ const Navbar = () => {
         <img
           src={crionLogo}
           alt="Crion Digital"
-          className="h-16 drop-shadow-[0_0_15px_rgba(123,46,255,0.3)]"
+          className="h-20 drop-shadow-[0_0_15px_rgba(123,46,255,0.3)]"
         />
         <a
           href={WA_LINK}
