@@ -14,9 +14,9 @@ const diffs = [
 ];
 
 const SolutionSection = () => (
-  <section className="bg-alt py-32 relative overflow-hidden noise-overlay">
+  <section className="bg-alt py-32 relative overflow-hidden noise-overlay clip-diagonal-top">
+    <div className="skew-stripe" />
     <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(270 80% 50% / 0.06), transparent)" }} />
-    <div className="section-divider absolute top-0 left-0 right-0" />
     <BackgroundLines count={4} color="mixed" />
     <FloatingParticles count={15} />
 
@@ -33,20 +33,28 @@ const SolutionSection = () => (
         </p>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto mb-16">
-        {diffs.map((d, i) => (
-          <AnimatedSection key={i} delay={i * 0.12} variant={i < 2 ? "fadeLeft" : "fadeRight"}>
-            <div className="group flex items-start gap-4 rounded-2xl border border-primary/5 bg-primary/[0.02] p-7 card-hover-glow backdrop-blur-sm">
-              <div className="h-12 w-12 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0 border border-primary/10 transition-all duration-500 group-hover:shadow-[0_0_20px_hsl(263_100%_59%_/_0.3)]">
-                <d.icon size={22} className="text-primary" />
+      {/* Overlapping asymmetric grid */}
+      <div className="relative max-w-4xl mx-auto mb-16">
+        <div className="grid sm:grid-cols-2 gap-5">
+          {diffs.map((d, i) => (
+            <AnimatedSection key={i} delay={i * 0.12} variant={i < 2 ? "fadeLeft" : "fadeRight"}>
+              <div
+                className="group flex items-start gap-4 rounded-2xl border border-primary/5 bg-primary/[0.02] p-7 card-hover-glow backdrop-blur-sm"
+                style={{ transform: i === 1 ? "translateY(2rem)" : i === 2 ? "translateY(-1rem)" : undefined }}
+              >
+                <div className="h-12 w-12 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0 border border-primary/10 transition-all duration-500 group-hover:shadow-[0_0_20px_hsl(263_100%_59%_/_0.3)]">
+                  <d.icon size={22} className="text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl text-foreground mb-1">{d.title}</h3>
+                  <p className="font-body text-sm text-muted-foreground">{d.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-heading text-xl text-foreground mb-1">{d.title}</h3>
-                <p className="font-body text-sm text-muted-foreground">{d.desc}</p>
-              </div>
-            </div>
-          </AnimatedSection>
-        ))}
+            </AnimatedSection>
+          ))}
+        </div>
+        {/* Decorative overlapping accent */}
+        <div className="absolute -bottom-8 -right-4 w-40 h-40 rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.12), transparent)" }} />
       </div>
 
       <AnimatedSection className="text-center" variant="scaleUp">
