@@ -2,14 +2,16 @@ import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import SectionLabel from "./SectionLabel";
 
+const WA_LINK = "https://wa.me/5511999999999";
+
 const faqs = [
-  { q: "Quanto tempo leva para entregar minha LP?", a: "Em até 7 dias úteis após o briefing aprovado." },
-  { q: "Preciso ter domínio antes de contratar?", a: "Não. O registro e configuração estão inclusos." },
-  { q: "Funciona para qualquer tipo de negócio?", a: "Sim. Cada página é criada do zero para o seu nicho." },
-  { q: "Como funciona o suporte de 30 dias?", a: "Ajustes de texto, cores e imagens sem custo extra." },
-  { q: "Minha LP vai aparecer no Google?", a: "Sim. Configuro o Search Console e envio o sitemap." },
-  { q: "Como é feito o pagamento?", a: "50% na aprovação do briefing e 50% na entrega final." },
-  { q: "E a hospedagem do site, como funciona?", a: "A hospedagem é de responsabilidade do cliente e paga diretamente à plataforma de hospedagem, não para a Crion Digital. O valor varia conforme o plano e é cobrado mensalmente para manter o site no ar. Fico disponível para orientar na escolha do melhor plano." },
+  { q: "Quanto tempo leva?", a: "7 dias úteis. Do briefing à página no ar." },
+  { q: "Preciso ter domínio?", a: "Não. Registro e configuração inclusos." },
+  { q: "Funciona pro meu nicho?", a: "Sim. Cada LP é criada do zero pro seu negócio." },
+  { q: "E o suporte?", a: "30 dias de ajustes sem custo extra." },
+  { q: "Vai aparecer no Google?", a: "Sim. Search Console + sitemap configurados na entrega." },
+  { q: "Como pago?", a: "50% no briefing, 50% na entrega. Simples." },
+  { q: "E a hospedagem?", a: "A hospedagem é paga diretamente à plataforma. Te oriento na escolha do melhor plano." },
 ];
 
 function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
@@ -34,7 +36,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
           className="overflow-hidden transition-all duration-300"
           style={{ maxHeight: open ? "200px" : "0" }}
         >
-          <p className="font-body text-sm font-light text-muted-foreground pb-5">{a}</p>
+          <p className="font-body text-sm text-muted-foreground pb-5">{a}</p>
         </div>
       </div>
     </AnimatedSection>
@@ -46,11 +48,23 @@ const FaqSection = () => (
     <div className="container mx-auto px-4 max-w-2xl">
       <AnimatedSection className="text-center mb-12">
         <SectionLabel text="Dúvidas" />
-        <h2 className="font-heading text-4xl md:text-5xl text-foreground">Perguntas frequentes</h2>
+        <h2 className="font-heading text-4xl md:text-5xl text-foreground">Sem enrolação.</h2>
       </AnimatedSection>
       {faqs.map((f, i) => (
         <FaqItem key={i} q={f.q} a={f.a} index={i} />
       ))}
+      <AnimatedSection className="text-center mt-12">
+        <p className="font-body text-muted-foreground mb-4">Ainda tem dúvida?</p>
+        <a
+          href={WA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-gradient-primary font-body font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/25"
+          style={{ color: "#fff" }}
+        >
+          Falar comigo no WhatsApp →
+        </a>
+      </AnimatedSection>
     </div>
   </section>
 );
