@@ -8,27 +8,27 @@ const HeroSection = () => (
     <HeroBackground />
 
     {/* Purple dominant ambient glow */}
-    <div className="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.18), hsl(270 100% 40% / 0.05), transparent)" }} />
-    <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(187 100% 50% / 0.06), transparent)" }} />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.08), transparent)" }} />
+    <div className="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.22), hsl(270 100% 40% / 0.08), transparent)" }} />
+    <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(187 100% 50% / 0.08), transparent)" }} />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.12), hsl(187 100% 50% / 0.04), transparent)" }} />
 
     {/* Speed lines — purple energy */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(7)].map((_, i) => (
+      {[...Array(9)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute h-[1px]"
           style={{
-            top: `${10 + i * 13}%`,
+            top: `${8 + i * 11}%`,
             left: "-10%",
-            width: `${40 + i * 10}%`,
+            width: `${35 + i * 8}%`,
             background: i % 3 === 0
-              ? "linear-gradient(90deg, transparent, hsl(187 100% 50% / 0.2), transparent)"
-              : "linear-gradient(90deg, transparent, hsl(263 100% 59% / 0.25), transparent)",
+              ? "linear-gradient(90deg, transparent, hsl(187 100% 50% / 0.15), transparent)"
+              : "linear-gradient(90deg, transparent, hsl(263 100% 59% / 0.2), transparent)",
           }}
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "300%", opacity: [0, 1, 0] }}
-          transition={{ duration: 2 + i * 0.3, delay: i * 0.35, repeat: Infinity, repeatDelay: 3.5 + i * 0.4, ease: "easeInOut" }}
+          transition={{ duration: 2.5 + i * 0.25, delay: i * 0.3, repeat: Infinity, repeatDelay: 3 + i * 0.35, ease: "easeInOut" }}
         />
       ))}
     </div>
@@ -68,20 +68,16 @@ const HeroSection = () => (
 
       {/* Subheadline */}
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.1 }} className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed">
-        Criamos landing pages do zero, com estrutura estratégica{" "}
-        <strong className="text-foreground">para transformar seus cliques em vendas reais.</strong>
+        Criamos landing pages do zero, projetadas para{" "}
+        <strong className="text-foreground">transformar tráfego em clientes.</strong>
       </motion.p>
 
       {/* CTA */}
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.3 }}>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center bg-gradient-primary font-body font-bold text-lg sm:text-xl uppercase tracking-wider px-14 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
-          Quero mais vendas →
+          Quero uma LP que vende →
         </a>
       </motion.div>
-
-      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7, duration: 0.6 }} className="font-body text-xs text-muted-foreground/40 mt-8 tracking-widest uppercase">
-        Sem contrato · Sem mensalidade · Resultado em 7 dias
-      </motion.p>
 
       {/* Scroll */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2, duration: 0.8 }} className="absolute bottom-10 left-1/2 -translate-x-1/2">
