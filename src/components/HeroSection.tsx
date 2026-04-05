@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import HeroBackground from "./HeroBackground";
 import HeroParticleSphere from "./HeroParticleSphere";
 import { useIsMobile } from "@/hooks/use-mobile";
+import crionHeroLogo from "@/assets/crion-hero-logo.png";
 
 const WA_LINK = "https://wa.me/5511933653167";
 
