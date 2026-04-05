@@ -22,7 +22,7 @@ const Navbar = () => {
       }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
-        <img src={crionLogo} alt="Crion Digital" className="h-9" />
+        <img src={crionLogo} alt="Crion Digital" className="h-12" />
         <a
           href={WA_LINK}
           target="_blank"
