@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CrionLogo from "./CrionLogo";
+import crionLogo from "@/assets/crion-logo.png";
 
 const WA_LINK = "https://wa.me/5511999999999";
 
@@ -22,7 +22,7 @@ const Navbar = () => {
       }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
-        <CrionLogo />
+        <img src={crionLogo} alt="Crion Digital" className="h-9" />
         <a
           href={WA_LINK}
           target="_blank"
