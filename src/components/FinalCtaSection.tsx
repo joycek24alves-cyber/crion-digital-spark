@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import BackgroundLines from "./BackgroundLines";
+import FloatingParticles from "./FloatingParticles";
 
 const WA_LINK = "https://wa.me/5511999999999";
 
@@ -9,6 +11,8 @@ const FinalCtaSection = () => (
     <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, hsl(270 80% 50% / 0.1), transparent 60%)" }} />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[200px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(270 80% 50% / 0.06), hsl(250 80% 50% / 0.03), transparent)" }} />
     <div className="section-divider absolute top-0 left-0 right-0" />
+    <BackgroundLines count={5} color="mixed" />
+    <FloatingParticles count={25} />
 
     {/* Grid */}
     <div className="absolute inset-0 pointer-events-none opacity-[0.015]" style={{
@@ -17,7 +21,7 @@ const FinalCtaSection = () => (
     }} />
 
     <div className="relative z-10 container mx-auto px-4 text-center">
-      <AnimatedSection>
+      <AnimatedSection variant="scaleUp">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -49,7 +53,7 @@ const FinalCtaSection = () => (
         </a>
 
         <p className="font-body text-xs text-muted-foreground/30 mt-10 tracking-[0.25em] uppercase">
-          Resposta em até 2 horas · Sem contrato · Resultado em 7 dias
+          Resposta em até 2 horas · Resultado em 7 dias
         </p>
       </AnimatedSection>
     </div>

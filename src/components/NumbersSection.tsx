@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
+import BackgroundLines from "./BackgroundLines";
 
 const stats = [
-  { value: 30, suffix: "+", label: "LPs ENTREGUES" },
+  { value: 30, suffix: "+", label: "LPS ENTREGUES" },
   { value: 7, suffix: " DIAS", label: "DO ZERO AO AR" },
   { value: 100, suffix: "%", label: "NO PRAZO" },
   { value: 3, suffix: "X", label: "MAIS CONVERSÃO" },
@@ -50,13 +51,15 @@ const NumbersSection = () => (
       backgroundImage: "linear-gradient(hsl(270 80% 65% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(270 80% 65% / 0.5) 1px, transparent 1px)",
       backgroundSize: "60px 60px",
     }} />
+    <BackgroundLines count={3} color="purple" />
 
     <div className="relative z-10 container mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
         {stats.map((s, i) => (
           <AnimatedSection
             key={i}
-            delay={i * 0.1}
+            delay={i * 0.15}
+            variant="scaleUp"
             className={`flex flex-col items-center py-12 ${
               i < stats.length - 1 ? "md:border-r border-primary/5" : ""
             } ${i < 2 ? "border-b md:border-b-0 border-primary/5" : ""}`}
