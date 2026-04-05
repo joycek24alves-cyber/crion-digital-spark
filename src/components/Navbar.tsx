@@ -15,11 +15,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "backdrop-blur-2xl border-b border-primary/5" : ""
+        scrolled ? "backdrop-blur-2xl border-b border-primary/8" : ""
       }`}
-      style={{
-        backgroundColor: scrolled ? "hsla(260, 30%, 4%, 0.9)" : "transparent",
-      }}
+      style={{ backgroundColor: scrolled ? "hsla(260, 35%, 4%, 0.92)" : "transparent" }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
         <img src={crionLogo} alt="Crion Digital" className="h-12" />
