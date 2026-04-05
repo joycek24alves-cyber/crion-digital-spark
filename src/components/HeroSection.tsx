@@ -4,85 +4,89 @@ import HeroBackground from "./HeroBackground";
 const WA_LINK = "https://wa.me/5511999999999";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-main noise-overlay">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    style={{ background: "linear-gradient(180deg, hsl(260 35% 4%) 0%, hsl(263 40% 6%) 50%, hsl(260 35% 4%) 100%)" }}>
     <HeroBackground />
 
-    {/* Purple dominant ambient glow */}
-    <div className="absolute top-1/4 left-1/3 w-[700px] h-[700px] rounded-full blur-[200px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.22), hsl(270 100% 40% / 0.08), transparent)" }} />
-    <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-[180px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(187 100% 50% / 0.08), transparent)" }} />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.12), hsl(187 100% 50% / 0.04), transparent)" }} />
-
-    {/* Speed lines — purple energy */}
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(9)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute h-[1px]"
-          style={{
-            top: `${8 + i * 11}%`,
-            left: "-10%",
-            width: `${35 + i * 8}%`,
-            background: i % 3 === 0
-              ? "linear-gradient(90deg, transparent, hsl(187 100% 50% / 0.15), transparent)"
-              : "linear-gradient(90deg, transparent, hsl(263 100% 59% / 0.2), transparent)",
-          }}
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: "300%", opacity: [0, 1, 0] }}
-          transition={{ duration: 2.5 + i * 0.25, delay: i * 0.3, repeat: Infinity, repeatDelay: 3 + i * 0.35, ease: "easeInOut" }}
-        />
-      ))}
-    </div>
-
-    {/* Grid overlay */}
-    <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
-      backgroundImage: "linear-gradient(hsl(263 100% 59% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(263 100% 59% / 0.4) 1px, transparent 1px)",
-      backgroundSize: "80px 80px",
-    }} />
+    {/* Single ambient glow — very subtle */}
+    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-[200px] pointer-events-none"
+      style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.10), transparent 70%)" }} />
 
     <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl">
-      {/* Brand */}
-      <motion.div initial={{ opacity: 0, scale: 0.8, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="mb-8">
-        <span className="font-heading text-base sm:text-lg tracking-[0.5em] uppercase font-bold" style={{ color: "#7B2EFF", textShadow: "0 0 25px hsl(263 100% 59% / 0.6), 0 0 80px hsl(263 100% 59% / 0.2)" }}>
-          CRION DIGITAL
-        </span>
-      </motion.div>
-
       {/* Badge */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-5 py-2 mb-12 backdrop-blur-sm">
-        <span className="h-2 w-2 rounded-full animate-pulse_dot" style={{ backgroundColor: "#7B2EFF", boxShadow: "0 0 10px #7B2EFF" }} />
-        <span className="font-body text-sm font-medium text-primary/90">Vagas limitadas este mês</span>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/[0.04] px-5 py-2 mb-14 backdrop-blur-sm"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+        <span className="font-body text-xs tracking-widest uppercase text-primary/70">Vagas limitadas</span>
       </motion.div>
 
       {/* Headline */}
-      <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[7rem] leading-[0.88] mb-2 uppercase">
-        <span className="block text-foreground" style={{ textShadow: "0 0 60px hsl(263 100% 59% / 0.08)" }}>
-          Clique não paga conta.
-        </span>
-        <span className="block text-gradient-intense mt-3" style={{ filter: "drop-shadow(0 0 40px hsl(263 100% 59% / 0.4))" }}>
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] leading-[0.9] tracking-tight uppercase mb-2"
+      >
+        <span className="block text-foreground">Clique não paga conta.</span>
+        <span className="block mt-2 text-gradient-intense" style={{ filter: "drop-shadow(0 0 30px hsl(263 100% 59% / 0.25))" }}>
           Venda sim.
         </span>
       </motion.h1>
 
-      {/* Divider */}
-      <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 0.9 }} className="w-32 h-[2px] mx-auto my-10" style={{ background: "linear-gradient(90deg, transparent, #7B2EFF, #00D4FF, transparent)", boxShadow: "0 0 20px hsl(263 100% 59% / 0.4), 0 0 60px hsl(187 100% 50% / 0.1)" }} />
+      {/* Divider line */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
+        className="w-24 h-px mx-auto my-10 origin-center"
+        style={{ background: "linear-gradient(90deg, transparent, hsl(263 100% 59% / 0.5), transparent)" }}
+      />
 
       {/* Subheadline */}
-      <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.1 }} className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed">
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+        className="font-body text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto mb-14 leading-relaxed"
+      >
         Criamos landing pages do zero, projetadas para{" "}
-        <strong className="text-foreground">transformar tráfego em clientes.</strong>
+        <strong className="text-foreground font-medium">transformar cliques em clientes.</strong>
       </motion.p>
 
       {/* CTA */}
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.3 }}>
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center bg-gradient-primary font-body font-bold text-lg sm:text-xl uppercase tracking-wider px-14 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
-          Quero uma LP que vende →
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.35 }}
+      >
+        <a
+          href={WA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex items-center gap-3 font-body font-bold text-base sm:text-lg uppercase tracking-wider px-12 py-5 rounded-xl transition-all duration-500 hover:-translate-y-1 text-primary-foreground bg-gradient-primary glow-cta hover:glow-cta-hover"
+        >
+          Quero uma LP que vende
+          <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
       </motion.div>
 
-      {/* Scroll */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2, duration: 0.8 }} className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="w-5 h-9 rounded-full border-2 border-primary/20 flex justify-center pt-2 glow-primary">
-          <div className="w-1 h-2 rounded-full bg-primary animate-scroll-hint" />
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.2, duration: 0.8 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+      >
+        <div className="w-5 h-8 rounded-full border border-primary/15 flex justify-center pt-2">
+          <motion.div
+            className="w-0.5 h-2 rounded-full bg-primary/40"
+            animate={{ y: [0, 8, 0], opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
       </motion.div>
     </div>
