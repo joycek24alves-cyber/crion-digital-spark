@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import BackgroundLines from "./BackgroundLines";
 import FloatingParticles from "./FloatingParticles";
+import FinalCtaParticles from "./FinalCtaParticles";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const WA_LINK = "https://wa.me/5511999999999";
@@ -11,21 +12,11 @@ const FinalCtaSection = () => {
 
   return (
     <section className="relative py-40 overflow-hidden noise-overlay">
-      {/* Spline 3D iframe — robot follows cursor, hidden on mobile */}
-      {!isMobile && (
-        <iframe
-          src="https://my.spline.design/robotfollowcursorforlandingpagemc-oMKkW1AtMEybvYHXOFoMYp3j/"
-          width="100%"
-          height="100%"
-          loading="lazy"
-          className="absolute inset-0 z-0 border-0 opacity-70"
-          style={{ pointerEvents: "auto" }}
-          title="Spline 3D Robot"
-        />
-      )}
+      {/* Three.js floating particles with connections */}
+      <FinalCtaParticles isMobile={isMobile} />
 
-      {/* Dark overlays */}
-      <div className="absolute inset-0 z-[1] bg-main/80" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-[1]" style={{ background: "rgba(8,12,18,0.80)" }} />
       <div className="absolute inset-0 z-[2]" style={{ background: "radial-gradient(ellipse at center, hsl(270 80% 50% / 0.1), transparent 60%)" }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[200px] pointer-events-none z-[2]" style={{ background: "radial-gradient(circle, hsl(270 80% 50% / 0.06), hsl(250 80% 50% / 0.03), transparent)" }} />
       <div className="section-divider absolute top-0 left-0 right-0 z-[2]" />
