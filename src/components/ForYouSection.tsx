@@ -12,11 +12,12 @@ const profiles = [
 ];
 
 const ForYouSection = () => (
-  <section className="bg-alt py-24 relative overflow-hidden">
+  <section className="bg-alt py-28 relative overflow-hidden">
     <div className="absolute top-1/2 left-0 w-[300px] h-[300px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none" />
+    <div className="section-divider absolute top-0 left-0 right-0" />
 
     <div className="relative container mx-auto px-4 max-w-3xl">
-      <AnimatedSection className="text-center mb-12">
+      <AnimatedSection className="text-center mb-14">
         <SectionLabel text="É pra você?" />
         <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
           Funciona <span className="text-gradient">pra você?</span>
@@ -27,10 +28,10 @@ const ForYouSection = () => (
         </p>
       </AnimatedSection>
 
-      <div className="space-y-3 mb-12">
+      <div className="space-y-3 mb-14">
         {profiles.map((p, i) => (
           <AnimatedSection key={i} delay={i * 0.1}>
-            <div className="flex items-center gap-4 rounded-xl border border-foreground/5 bg-foreground/[0.02] px-6 py-4 transition-all duration-300 hover:border-primary/30">
+            <div className="flex items-center gap-4 rounded-xl border border-foreground/5 bg-foreground/[0.02] px-6 py-5 transition-all duration-300 hover:border-primary/30 hover:bg-foreground/[0.04]">
               <CheckCircle2 size={20} className="text-primary flex-shrink-0" />
               <span className="font-body text-base text-foreground/90">{p}</span>
             </div>
@@ -43,13 +44,7 @@ const ForYouSection = () => (
           Não é sobre gastar mais.{" "}
           <span className="text-gradient">É sobre converter melhor.</span>
         </p>
-        <a
-          href={WA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-gradient-primary font-body font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/25"
-          style={{ color: "#fff" }}
-        >
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-semibold text-lg px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
           Quero converter melhor →
         </a>
       </AnimatedSection>
