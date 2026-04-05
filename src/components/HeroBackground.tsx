@@ -109,7 +109,7 @@ function SceneContent() {
   return (
     <>
       <GridPlane />
-      <Particles count={300} />
+      <Particles count={500} />
       <LightSweep />
     </>
   );
