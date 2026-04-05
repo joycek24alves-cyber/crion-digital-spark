@@ -68,8 +68,8 @@ const HeroSection = () => (
 
       {/* Subheadline */}
       <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.1 }} className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed">
-        Desenvolvemos landing pages focadas em conversão para{" "}
-        <strong className="text-foreground">transformar seus cliques em vendas reais.</strong>
+        Criamos landing pages do zero, com estrutura estratégica{" "}
+        <strong className="text-foreground">para transformar seus cliques em vendas reais.</strong>
       </motion.p>
 
       {/* CTA */}

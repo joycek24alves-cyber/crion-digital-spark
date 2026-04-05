@@ -5,10 +5,10 @@ import { CheckCircle2 } from "lucide-react";
 const WA_LINK = "https://wa.me/5511999999999";
 
 const profiles = [
-  "Negócios que investem em Google Ads ou Meta Ads",
-  "Profissionais que têm cliques mas poucas vendas",
-  "Empresas cansadas de templates genéricos",
-  "Quem quer resultados reais, não páginas bonitas",
+  "Negócios que investem em tráfego pago mas não têm uma LP profissional",
+  "Profissionais que precisam de uma página feita pra vender",
+  "Empresas que ainda usam templates genéricos ou não têm site",
+  "Quem quer uma presença online construída com estratégia de conversão",
 ];
 
 const ForYouSection = () => (
@@ -23,7 +23,7 @@ const ForYouSection = () => (
           Funciona <span className="text-gradient-intense">pra você?</span>
         </h2>
         <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Se você já investe em tráfego pago e não está tendo resultado,{" "}
+          Se você investe em tráfego pago e ainda não tem uma LP profissional,{" "}
           <strong className="text-foreground">sim — isso é pra você.</strong>
         </p>
       </AnimatedSection>
@@ -41,11 +41,11 @@ const ForYouSection = () => (
 
       <AnimatedSection className="text-center">
         <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-foreground mb-12 leading-[0.95]">
-          Não é sobre gastar mais.{" "}
-          <span className="text-gradient-intense">É sobre converter melhor.</span>
+          Não é sobre gastar mais em ads.{" "}
+          <span className="text-gradient-intense">É sobre ter uma página feita pra vender.</span>
         </p>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-bold text-lg uppercase tracking-wider px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
-          Quero converter melhor →
+          Quero minha LP agora →
         </a>
       </AnimatedSection>
     </div>

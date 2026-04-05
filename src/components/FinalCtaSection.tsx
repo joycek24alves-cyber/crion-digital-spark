@@ -35,7 +35,7 @@ const FinalCtaSection = () => (
         </h2>
 
         <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto mb-14">
-          Sua página pode vender mais. <strong className="text-foreground">E nós mostramos como.</strong>
+          Criamos a página que vai vender por você. <strong className="text-foreground">Do zero. Em 7 dias.</strong>
         </p>
 
         <a

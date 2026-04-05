@@ -40,10 +40,10 @@ const PainSection = () => (
       <AnimatedSection className="text-center">
         <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
           Se você se identificou, o problema <strong className="text-foreground">não é o tráfego</strong>.{" "}
-          <strong className="text-gradient">É a sua página.</strong>
+          <strong className="text-gradient">É que você ainda não tem uma página feita pra vender.</strong>
         </p>
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-bold text-lg uppercase tracking-wider px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
-          Resolver isso agora →
+          Quero uma LP que vende →
         </a>
       </AnimatedSection>
     </div>
