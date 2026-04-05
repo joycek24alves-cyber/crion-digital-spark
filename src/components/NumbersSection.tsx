@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const stats = [
-  { value: 30, suffix: "+", label: "LPs entregues" },
-  { value: 7, suffix: " dias", label: "Do zero ao ar" },
-  { value: 100, suffix: "%", label: "Entregues no prazo" },
-  { value: 3, suffix: "x", label: "Mais conversão" },
+  { value: 30, suffix: "+", label: "LPs ENTREGUES" },
+  { value: 7, suffix: " DIAS", label: "DO ZERO AO AR" },
+  { value: 100, suffix: "%", label: "NO PRAZO" },
+  { value: 3, suffix: "X", label: "MAIS CONVERSÃO" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -37,27 +37,32 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   }, [target]);
 
   return (
-    <span ref={ref} className="font-heading text-5xl md:text-7xl text-gradient" style={{ filter: "drop-shadow(0 0 15px hsl(192 100% 50% / 0.2))" }}>
-      {count}
-      {suffix}
+    <span ref={ref} className="font-heading text-5xl md:text-7xl text-gradient-intense" style={{ filter: "drop-shadow(0 0 20px hsl(270 80% 65% / 0.25))" }}>
+      {count}{suffix}
     </span>
   );
 }
 
 const NumbersSection = () => (
-  <section className="bg-alt py-24">
-    <div className="container mx-auto px-4">
+  <section className="bg-alt py-24 relative overflow-hidden noise-overlay">
+    <div className="section-divider absolute top-0 left-0 right-0" />
+    <div className="absolute inset-0 opacity-[0.02]" style={{
+      backgroundImage: "linear-gradient(hsl(270 80% 65% / 0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(270 80% 65% / 0.5) 1px, transparent 1px)",
+      backgroundSize: "60px 60px",
+    }} />
+
+    <div className="relative z-10 container mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
         {stats.map((s, i) => (
           <AnimatedSection
             key={i}
             delay={i * 0.1}
             className={`flex flex-col items-center py-12 ${
-              i < stats.length - 1 ? "md:border-r border-subtle" : ""
-            } ${i < 2 ? "border-b md:border-b-0 border-subtle" : ""}`}
+              i < stats.length - 1 ? "md:border-r border-primary/5" : ""
+            } ${i < 2 ? "border-b md:border-b-0 border-primary/5" : ""}`}
           >
             <Counter target={s.value} suffix={s.suffix} />
-            <span className="font-body text-sm text-muted-foreground mt-3 tracking-wide">{s.label}</span>
+            <span className="font-body text-[11px] text-muted-foreground mt-3 tracking-[0.2em] uppercase">{s.label}</span>
           </AnimatedSection>
         ))}
       </div>
