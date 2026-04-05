@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const stats = [
-  { value: 3, suffix: "+", label: "Projetos entregues" },
+  { value: 30, suffix: "+", label: "Projetos entregues" },
   { value: 7, suffix: "", label: "Dias para entregar" },
   { value: 100, suffix: "%", label: "No prazo" },
   { value: 30, suffix: "", label: "Dias de suporte" },
