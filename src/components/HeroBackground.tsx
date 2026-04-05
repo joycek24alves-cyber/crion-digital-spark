@@ -32,7 +32,7 @@ function GridPlane() {
 
   return (
     <lineSegments ref={ref} geometry={geo}>
-      <lineBasicMaterial color="#7B2EFF" transparent opacity={0.06} />
+      <lineBasicMaterial color="#7B2EFF" transparent opacity={0.12} />
     </lineSegments>
   );
 }
@@ -71,7 +71,7 @@ function Particles({ count }: { count: number }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} count={count} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.02} color="#7B2EFF" transparent opacity={0.35} sizeAttenuation />
+      <pointsMaterial size={0.035} color="#9D5CFF" transparent opacity={0.55} sizeAttenuation />
     </points>
   );
 }
@@ -88,8 +88,8 @@ function LightSweep() {
   });
   return (
     <mesh ref={ref}>
-      <sphereGeometry args={[1.2, 16, 16]} />
-      <meshBasicMaterial color="#7B2EFF" transparent opacity={0.04} />
+      <sphereGeometry args={[1.5, 16, 16]} />
+      <meshBasicMaterial color="#7B2EFF" transparent opacity={0.08} />
     </mesh>
   );
 }
