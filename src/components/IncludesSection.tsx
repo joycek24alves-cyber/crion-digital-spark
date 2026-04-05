@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import BackgroundLines from "./BackgroundLines";
 import { Check } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const items = [
   "LP de alta conversão",

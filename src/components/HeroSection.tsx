@@ -3,7 +3,7 @@ import HeroBackground from "./HeroBackground";
 import HeroParticleSphere from "./HeroParticleSphere";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const HeroSection = () => {
   const isMobile = useIsMobile();

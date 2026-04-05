@@ -4,7 +4,7 @@ import BackgroundLines from "./BackgroundLines";
 import FloatingParticles from "./FloatingParticles";
 import { Rocket, BarChart3, Clock, TrendingUp } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const benefits = [
   { icon: Rocket, title: "Uma página construída pra vender", desc: "Do zero. Com estratégia. Sem template." },

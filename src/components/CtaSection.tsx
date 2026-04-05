@@ -2,7 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import BackgroundLines from "./BackgroundLines";
 import FloatingParticles from "./FloatingParticles";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const CtaSection = () => (
   <section className="relative py-32 overflow-hidden noise-overlay">

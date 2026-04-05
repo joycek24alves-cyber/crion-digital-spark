@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import BackgroundLines from "./BackgroundLines";
 import { ArrowUpRight } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const cases = [
   { tag: "Estética · SP", title: "Estética by Viviane Oliveira", desc: "LP criada do zero com foco em conversão. Resultado 3x maior.", link: "https://esteticabyvivianeoliveira.com.br" },

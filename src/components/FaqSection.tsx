@@ -3,7 +3,7 @@ import AnimatedSection from "./AnimatedSection";
 import SectionLabel from "./SectionLabel";
 import FloatingParticles from "./FloatingParticles";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const faqs = [
   { q: "Quanto tempo leva?", a: "7 dias úteis. Do briefing à página no ar." },

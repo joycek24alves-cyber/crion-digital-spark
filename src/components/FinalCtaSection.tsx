@@ -5,7 +5,7 @@ import FloatingParticles from "./FloatingParticles";
 import FinalCtaParticles from "./FinalCtaParticles";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const WA_LINK = "https://wa.me/5511999999999";
+const WA_LINK = "https://wa.me/5511933653167";
 
 const FinalCtaSection = () => {
   const isMobile = useIsMobile();
