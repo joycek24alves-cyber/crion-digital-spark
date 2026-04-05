@@ -94,6 +94,47 @@ function LightSweep() {
   );
 }
 
+/* Horizontal energy lines that sweep across */
+function EnergyLines({ count = 5 }: { count?: number }) {
+  const refs = useRef<THREE.Mesh[]>([]);
+  const data = useMemo(() =>
+    Array.from({ length: count }, (_, i) => ({
+      y: (i / (count - 1)) * 4 - 2,
+      speed: 0.3 + Math.random() * 0.4,
+      offset: Math.random() * Math.PI * 2,
+      width: 6 + Math.random() * 6,
+    })),
+    [count]
+  );
+
+  useFrame((state) => {
+    refs.current.forEach((mesh, i) => {
+      if (!mesh) return;
+      const d = data[i];
+      const t = state.clock.elapsedTime * d.speed + d.offset;
+      // Sweep from left to right, looping
+      mesh.position.x = ((t % (Math.PI * 2)) / (Math.PI * 2)) * 20 - 10;
+      mesh.position.y = d.y + Math.sin(t * 0.5) * 0.3;
+      mesh.position.z = -1.5;
+      // Fade based on position (brightest in center)
+      const mat = mesh.material as THREE.MeshBasicMaterial;
+      const dist = Math.abs(mesh.position.x) / 10;
+      mat.opacity = (1 - dist) * 0.12;
+    });
+  });
+
+  return (
+    <>
+      {data.map((d, i) => (
+        <mesh key={i} ref={(el) => { if (el) refs.current[i] = el; }}>
+          <planeGeometry args={[d.width, 0.005]} />
+          <meshBasicMaterial color="#7B2EFF" transparent opacity={0} />
+        </mesh>
+      ))}
+    </>
+  );
+}
+
 function SceneContent() {
   const { gl } = useThree();
   useEffect(() => {
@@ -111,6 +152,7 @@ function SceneContent() {
       <GridPlane />
       <Particles count={500} />
       <LightSweep />
+      <EnergyLines count={6} />
     </>
   );
 }
