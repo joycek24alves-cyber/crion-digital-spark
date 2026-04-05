@@ -37,7 +37,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   }, [target]);
 
   return (
-    <span ref={ref} className="font-heading text-5xl md:text-6xl text-gradient">
+    <span ref={ref} className="font-heading text-5xl md:text-7xl text-gradient" style={{ filter: "drop-shadow(0 0 15px hsl(192 100% 50% / 0.2))" }}>
       {count}
       {suffix}
     </span>
@@ -45,19 +45,19 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
 }
 
 const NumbersSection = () => (
-  <section className="bg-alt py-20">
+  <section className="bg-alt py-24">
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
         {stats.map((s, i) => (
           <AnimatedSection
             key={i}
             delay={i * 0.1}
-            className={`flex flex-col items-center py-10 ${
+            className={`flex flex-col items-center py-12 ${
               i < stats.length - 1 ? "md:border-r border-subtle" : ""
             } ${i < 2 ? "border-b md:border-b-0 border-subtle" : ""}`}
           >
             <Counter target={s.value} suffix={s.suffix} />
-            <span className="font-body text-sm text-muted-foreground mt-2">{s.label}</span>
+            <span className="font-body text-sm text-muted-foreground mt-3 tracking-wide">{s.label}</span>
           </AnimatedSection>
         ))}
       </div>

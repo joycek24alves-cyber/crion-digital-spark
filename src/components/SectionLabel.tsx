@@ -1,5 +1,5 @@
 const SectionLabel = ({ text }: { text: string }) => (
-  <span className="inline-block font-body text-xs font-medium tracking-[0.2em] uppercase text-primary mb-4">
+  <span className="inline-block font-body text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-5 text-glow-primary">
     {text}
   </span>
 );
