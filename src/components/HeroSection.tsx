@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import HeroBackground from "./HeroBackground";
 import HeroParticleSphere from "./HeroParticleSphere";
 import { useIsMobile } from "@/hooks/use-mobile";
+import crionHeroLogo from "@/assets/crion-hero-logo.png";
 
 const WA_LINK = "https://wa.me/5511933653167";
 
@@ -25,6 +26,16 @@ const HeroSection = () => {
         style={{ background: "radial-gradient(circle, hsl(263 100% 59% / 0.10), transparent 70%)" }} />
 
       <div className="relative z-10 container mx-auto px-4 text-center max-w-5xl">
+        {/* Hero Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-10"
+        >
+          <img src={crionHeroLogo} alt="Crion Digital" className="h-32 sm:h-40 md:h-48 mx-auto drop-shadow-[0_0_30px_rgba(123,46,255,0.4)]" />
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
