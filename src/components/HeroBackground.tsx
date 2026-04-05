@@ -152,6 +152,7 @@ function SceneContent() {
       <GridPlane />
       <Particles count={500} />
       <LightSweep />
+      <EnergyLines count={6} />
     </>
   );
 }
