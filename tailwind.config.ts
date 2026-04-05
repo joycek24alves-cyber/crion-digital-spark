@@ -60,8 +60,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Barlow Condensed"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        heading: ['"Outfit"', 'sans-serif'],
+        body: ['"Space Grotesk"', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -93,6 +93,10 @@ export default {
           "0%, 100%": { opacity: "0.3", transform: "translateY(0)" },
           "50%": { opacity: "1", transform: "translateY(8px)" },
         },
+        "grid-flow": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +105,7 @@ export default {
         pulse_dot: "pulse_dot 2s ease-in-out infinite",
         float: "float 3s ease-in-out infinite",
         "scroll-hint": "scroll-hint 2s ease-in-out infinite",
+        "grid-flow": "grid-flow 20s linear infinite",
       },
     },
   },

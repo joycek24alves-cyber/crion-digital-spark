@@ -14,11 +14,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-xl border-b border-foreground/5" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "backdrop-blur-2xl border-b border-primary/5" : ""
       }`}
       style={{
-        backgroundColor: scrolled ? "hsla(220, 40%, 4%, 0.92)" : "transparent",
+        backgroundColor: scrolled ? "hsla(260, 30%, 4%, 0.9)" : "transparent",
       }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
@@ -27,7 +27,7 @@ const Navbar = () => {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-primary font-body text-sm font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 hover:-translate-y-0.5 glow-primary hover:glow-primary-strong"
+          className="bg-gradient-primary font-body text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 glow-primary hover:glow-primary-strong"
           style={{ color: "#fff" }}
         >
           Solicitar proposta

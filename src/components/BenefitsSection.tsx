@@ -12,23 +12,23 @@ const benefits = [
 ];
 
 const BenefitsSection = () => (
-  <section className="bg-main py-28 relative overflow-hidden">
-    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/[0.04] blur-[120px] pointer-events-none" />
+  <section className="bg-main py-32 relative overflow-hidden noise-overlay">
+    <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full blur-[160px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(280 80% 50% / 0.05), transparent)" }} />
     <div className="section-divider absolute top-0 left-0 right-0" />
 
-    <div className="relative container mx-auto px-4">
+    <div className="relative z-10 container mx-auto px-4">
       <AnimatedSection className="text-center mb-16">
         <SectionLabel text="Benefícios" />
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground">
-          O que você <span className="text-gradient">ganha</span> com isso
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-[0.9]">
+          O que você <span className="text-gradient-intense">ganha</span> com isso
         </h2>
       </AnimatedSection>
 
-      <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto mb-14">
+      <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto mb-16">
         {benefits.map((b, i) => (
           <AnimatedSection key={i} delay={i * 0.1}>
-            <div className="group rounded-xl border border-foreground/5 bg-foreground/[0.02] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-foreground/[0.04] h-full">
-              <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 border border-primary/15 transition-all duration-300 group-hover:glow-primary">
+            <div className="group rounded-2xl border border-primary/5 bg-primary/[0.02] p-8 transition-all duration-400 hover:-translate-y-1.5 hover:border-primary/20 hover:bg-primary/[0.04] backdrop-blur-sm h-full">
+              <div className="h-12 w-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 border border-primary/10 transition-all duration-300 group-hover:glow-primary-strong">
                 <b.icon size={22} className="text-primary" />
               </div>
               <h3 className="font-heading text-xl text-foreground mb-2">{b.title}</h3>
@@ -39,7 +39,7 @@ const BenefitsSection = () => (
       </div>
 
       <AnimatedSection className="text-center">
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-semibold text-lg px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-bold text-lg uppercase tracking-wider px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
           Quero esses resultados →
         </a>
       </AnimatedSection>

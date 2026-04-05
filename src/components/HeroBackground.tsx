@@ -4,17 +4,7 @@ import * as THREE from "three";
 
 const mouse = new THREE.Vector2(0, 0);
 
-function WireframeSphere({
-  radius,
-  color,
-  position,
-  speed,
-}: {
-  radius: number;
-  color: string;
-  position: [number, number, number];
-  speed: number;
-}) {
+function WireframeSphere({ radius, color, position, speed }: { radius: number; color: string; position: [number, number, number]; speed: number }) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((_, delta) => {
     if (!ref.current) return;
@@ -26,7 +16,7 @@ function WireframeSphere({
   return (
     <mesh ref={ref} position={position}>
       <icosahedronGeometry args={[radius, 2]} />
-      <meshBasicMaterial color={color} wireframe transparent opacity={0.15} />
+      <meshBasicMaterial color={color} wireframe transparent opacity={0.12} />
     </mesh>
   );
 }
@@ -52,14 +42,9 @@ function Particles({ count }: { count: number }) {
   return (
     <points ref={ref}>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[positions, 3]}
-          count={count}
-          itemSize={3}
-        />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} count={count} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial color="#00c6ff" size={0.03} transparent opacity={0.6} sizeAttenuation />
+      <pointsMaterial color="#a855f7" size={0.03} transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -78,9 +63,10 @@ function SceneContent() {
 
   return (
     <>
-      <WireframeSphere radius={3} color="#5b5ef4" position={[0, 0, 0]} speed={0.15} />
-      <WireframeSphere radius={1.5} color="#00c6ff" position={[2, 1, -2]} speed={0.25} />
-      <Particles count={800} />
+      <WireframeSphere radius={3.5} color="#7c3aed" position={[0, 0, 0]} speed={0.12} />
+      <WireframeSphere radius={1.8} color="#a855f7" position={[2.5, 1, -2]} speed={0.2} />
+      <WireframeSphere radius={1} color="#6366f1" position={[-2, -1.5, -1]} speed={0.3} />
+      <Particles count={1000} />
     </>
   );
 }

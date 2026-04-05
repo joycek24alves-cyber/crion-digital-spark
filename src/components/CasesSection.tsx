@@ -11,27 +11,27 @@ const cases = [
 ];
 
 const CasesSection = () => (
-  <section id="cases" className="bg-main py-28 relative overflow-hidden">
-    <div className="absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-[120px] pointer-events-none" />
+  <section id="cases" className="bg-main py-32 relative overflow-hidden noise-overlay">
+    <div className="absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full blur-[140px] pointer-events-none" style={{ background: "radial-gradient(circle, hsl(270 80% 50% / 0.05), transparent)" }} />
     <div className="section-divider absolute top-0 left-0 right-0" />
 
-    <div className="relative container mx-auto px-4">
+    <div className="relative z-10 container mx-auto px-4">
       <AnimatedSection className="text-center mb-16">
         <SectionLabel text="Prova real" />
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-3">
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-4 leading-[0.9]">
           Resultados, não promessas.
         </h2>
-        <p className="font-body text-muted-foreground text-lg">Páginas reais. Clientes reais. Conversão real.</p>
+        <p className="font-body text-lg text-muted-foreground">Páginas reais. Clientes reais. Conversão real.</p>
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-3 gap-6 mb-14">
+      <div className="grid md:grid-cols-3 gap-6 mb-16">
         {cases.map((c, i) => (
           <AnimatedSection key={i} delay={i * 0.15}>
-            <div className="group rounded-xl border border-foreground/5 bg-foreground/[0.02] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:bg-foreground/[0.04] h-full flex flex-col">
-              <span className="font-body text-xs font-medium text-primary/70 tracking-wide uppercase">{c.tag}</span>
-              <h3 className="font-heading text-xl text-foreground mt-2 mb-3">{c.title}</h3>
-              <p className="font-body text-sm text-muted-foreground mb-6 flex-1">{c.desc}</p>
-              <a href={c.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-body text-sm font-medium text-primary transition-all group-hover:gap-2">
+            <div className="group rounded-2xl border border-primary/5 bg-primary/[0.02] p-8 transition-all duration-400 hover:-translate-y-2 hover:border-primary/25 hover:bg-primary/[0.04] backdrop-blur-sm h-full flex flex-col">
+              <span className="font-body text-[11px] font-semibold text-primary/60 tracking-[0.2em] uppercase">{c.tag}</span>
+              <h3 className="font-heading text-2xl text-foreground mt-3 mb-3">{c.title}</h3>
+              <p className="font-body text-sm text-muted-foreground mb-8 flex-1">{c.desc}</p>
+              <a href={c.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-body text-sm font-medium text-primary transition-all group-hover:gap-3">
                 Ver ao vivo <ArrowUpRight size={14} />
               </a>
             </div>
@@ -40,7 +40,7 @@ const CasesSection = () => (
       </div>
 
       <AnimatedSection className="text-center">
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-semibold text-lg px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-primary font-body font-bold text-lg uppercase tracking-wider px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 glow-cta hover:glow-cta-hover" style={{ color: "#fff" }}>
           Quero um resultado assim →
         </a>
       </AnimatedSection>
