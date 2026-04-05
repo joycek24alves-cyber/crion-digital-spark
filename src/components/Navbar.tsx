@@ -20,7 +20,11 @@ const Navbar = () => {
       style={{ backgroundColor: scrolled ? "hsla(260, 35%, 4%, 0.92)" : "transparent" }}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-8">
-        <img src={crionLogo} alt="Crion Digital" className="h-12" />
+        <img
+          src={crionLogo}
+          alt="Crion Digital"
+          className="h-12 drop-shadow-[0_0_15px_rgba(123,46,255,0.3)]"
+        />
         <a
           href={WA_LINK}
           target="_blank"
