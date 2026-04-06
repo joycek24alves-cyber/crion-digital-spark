@@ -12,6 +12,7 @@ import IncludesSection from "@/components/IncludesSection";
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FinalCtaSection from "@/components/FinalCtaSection";
+import ContactFormSection from "@/components/ContactFormSection";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 
@@ -31,6 +32,7 @@ const Index = () => (
     <CtaSection />
     <FaqSection />
     <FinalCtaSection />
+    <ContactFormSection />
     <Footer />
     <ChatBot />
   </div>
