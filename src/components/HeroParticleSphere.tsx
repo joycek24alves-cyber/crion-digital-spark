@@ -3,8 +3,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 const mouse = new THREE.Vector2(0, 0);
-const PARTICLE_COUNT_DESKTOP = 2000;
-const PARTICLE_COUNT_MOBILE = 1000;
+const PARTICLE_COUNT_DESKTOP = 1200;
+const PARTICLE_COUNT_MOBILE = 600;
 
 function Sphere({ count }: { count: number }) {
   const ref = useRef<THREE.Points>(null!);

@@ -3,9 +3,9 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 const mouse3 = new THREE.Vector2(0, 0);
-const DESKTOP_COUNT = 1500;
-const MOBILE_COUNT = 750;
-const CONNECTION_DIST = 1.2; // in world units
+const DESKTOP_COUNT = 800;
+const MOBILE_COUNT = 400;
+const CONNECTION_DIST = 1.2;
 
 function ParticleField({ count }: { count: number }) {
   const pointsRef = useRef<THREE.Points>(null!);
@@ -69,8 +69,8 @@ function ParticleField({ count }: { count: number }) {
     if (!linesRef.current) return;
     let lineIdx = 0;
     const lineColor = new THREE.Color("#5b5ef4");
-    for (let i = 0; i < Math.min(count, 300); i++) {
-      for (let j = i + 1; j < Math.min(count, 300); j++) {
+    for (let i = 0; i < Math.min(count, 150); i++) {
+      for (let j = i + 1; j < Math.min(count, 150); j++) {
         if (lineIdx >= maxLines) break;
         const i3 = i * 3, j3 = j * 3;
         const dx = arr[i3] - arr[j3];
