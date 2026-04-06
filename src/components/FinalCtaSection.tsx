@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import BackgroundLines from "./BackgroundLines";
 import FloatingParticles from "./FloatingParticles";
-import FinalCtaParticles from "./FinalCtaParticles";
+import { lazy, Suspense } from "react";
+const FinalCtaParticles = lazy(() => import("./FinalCtaParticles"));
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const WA_LINK = "https://wa.me/5511933653167";
@@ -13,7 +14,9 @@ const FinalCtaSection = () => {
   return (
     <section className="relative py-40 overflow-hidden noise-overlay">
       {/* Three.js floating particles with connections */}
-      <FinalCtaParticles isMobile={isMobile} />
+      <Suspense fallback={null}>
+        <FinalCtaParticles isMobile={isMobile} />
+      </Suspense>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 z-[1]" style={{ background: "rgba(8,12,18,0.80)" }} />

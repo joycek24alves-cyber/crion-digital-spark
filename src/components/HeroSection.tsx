@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import HeroBackground from "./HeroBackground";
-import HeroParticleSphere from "./HeroParticleSphere";
+import { lazy, Suspense } from "react";
+const HeroParticleSphere = lazy(() => import("./HeroParticleSphere"));
 import { useIsMobile } from "@/hooks/use-mobile";
 import crionHeroLogo from "@/assets/crion-hero-logo.png";
 
@@ -14,7 +15,9 @@ const HeroSection = () => {
       style={{ background: "linear-gradient(180deg, hsl(260 35% 4%) 0%, hsl(263 40% 6%) 50%, hsl(260 35% 4%) 100%)" }}>
 
       {/* Three.js particle sphere */}
-      <HeroParticleSphere isMobile={isMobile} />
+      <Suspense fallback={null}>
+        <HeroParticleSphere isMobile={isMobile} />
+      </Suspense>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 z-[1]" style={{ background: "rgba(8,12,18,0.80)" }} />
