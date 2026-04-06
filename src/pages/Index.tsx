@@ -32,6 +32,7 @@ const Index = () => (
     <CtaSection />
     <FaqSection />
     <FinalCtaSection />
+    <ContactFormSection />
     <Footer />
     <ChatBot />
   </div>
