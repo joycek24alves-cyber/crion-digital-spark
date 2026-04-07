@@ -1,7 +1,20 @@
 import { useForm, ValidationError } from "@formspree/react";
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 const ContactFormSection = () => {
   const [state, handleSubmit] = useForm("mdapyrej");
+
+  useEffect(() => {
+    if (state.succeeded && window.gtag) {
+      window.gtag('event', 'conversion', { 'send_to': 'AW-18068816248' });
+    }
+  }, [state.succeeded]);
 
   return (
     <section id="contato" className="relative py-20 md:py-28">
